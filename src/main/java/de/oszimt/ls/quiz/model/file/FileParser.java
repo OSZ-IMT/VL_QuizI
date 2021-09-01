@@ -10,6 +10,11 @@ public class FileParser {
     private String xmlPfad;
     private XMLParser xmlParser;
 
+    /**
+     * Create FileParser
+     * @param xmlPfad
+     * @param csvPfad
+     */
     public FileParser(String xmlPfad, String csvPfad){
         this.csvPfad = csvPfad;
         this.xmlPfad = xmlPfad;

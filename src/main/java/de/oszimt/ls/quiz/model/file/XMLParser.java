@@ -16,7 +16,7 @@ import org.w3c.dom.Document;
 import org.w3c.dom.Element;
 import org.w3c.dom.NodeList;
 
-import de.oszimt.ls.quiz.view.StartQuiz;
+import de.oszimt.ls.quiz.StartQuiz;
 
 public class XMLParser {
 

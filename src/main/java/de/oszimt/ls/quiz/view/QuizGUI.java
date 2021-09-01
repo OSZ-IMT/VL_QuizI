@@ -5,6 +5,7 @@ import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.net.URL;
+import java.net.URLClassLoader;
 
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -188,8 +189,7 @@ public class QuizGUI extends JFrame {
 		lblSpielstand.setBounds(180, 100, 444, 70);
 		contentPane.add(lblSpielstand);
 
-		URL url = Res.class.getResource("oszimt.png");
-		ImageIcon icon = new ImageIcon(url);
+		ImageIcon icon = new ImageIcon("oszimt.png");
 		this.setIconImage(icon.getImage());
 
 		lblFrage = new JLabel[control.FRAGEANZAHL];

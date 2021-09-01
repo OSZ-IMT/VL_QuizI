@@ -1,6 +1,7 @@
-package de.oszimt.ls.quiz.view;
+package de.oszimt.ls.quiz;
 
 import de.oszimt.ls.quiz.controller.Controller;
+import de.oszimt.ls.quiz.view.QuizGUI;
 
 import java.awt.EventQueue;
 
@@ -32,6 +33,7 @@ public class StartQuiz {
 	 * @param message
 	 */
 	public static void showException(Exception e, String message) {
+		System.err.println(message);
 		e.printStackTrace();
 		JOptionPane.showMessageDialog(null, message + " in " + e.getStackTrace()[0], e.getClass().getCanonicalName(),
 				JOptionPane.ERROR_MESSAGE);
