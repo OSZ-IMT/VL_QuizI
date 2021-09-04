@@ -3,49 +3,49 @@ package de.oszimt.ls.quiz.model;
 public class Spielstand {
 
 	// Attribute
-	private Partei heim;
-	private Partei gast;
+	private Partei lehrer;
+	private Partei schueler;
 
 	/**
 	 * Create Spielstand
 	 * 
-	 * @param parteiHeim
-	 * @param pktHeim
-	 * @param parteiGast
-	 * @param pktGast
+	 * @param lehrerName
+	 * @param lehrerPkt
+	 * @param schuelerName
+	 * @param schuelerPkt
 	 */
-	public Spielstand(String parteiHeim, int pktHeim, String parteiGast, int pktGast) {
-		this.heim = new Partei(parteiHeim, pktHeim);
-		this.gast = new Partei(parteiGast, pktGast);
+	public Spielstand(String lehrerName, int lehrerPkt, String schuelerName, int schuelerPkt) {
+		this.lehrer = new Partei(lehrerName, lehrerPkt);
+		this.schueler = new Partei(schuelerName, schuelerPkt);
 	}
 
 	// Methoden
 	public String toString() {
-		return heim.getName() + " " + heim.getPunkte() + " : " + gast.getPunkte() + " " + gast.getName();
+		return lehrer.getName() + " " + lehrer.getPunkte() + " : " + schueler.getPunkte() + " " + schueler.getName();
 	}
 
-	public int getPunkteHeim() {
-		return heim.getPunkte();
+	public int getPunkteLehrer() {
+		return lehrer.getPunkte();
 	}
 
-	public int getPunkteGast() {
-		return gast.getPunkte();
+	public int getPunkteSchueler() {
+		return schueler.getPunkte();
 	}
 
-	public String getParteiHeim() {
-		return heim.getName();
+	public String getLehrerName() {
+		return lehrer.getName();
 	}
 
-	public String getParteiGast() {
-		return gast.getName();
+	public String getSchuelerName() {
+		return schueler.getName();
 	}
 
-	public void heimGewinnt() {
-		this.heim.gewonnen();
+	public void lehrerGewinnt() {
+		this.lehrer.gewonnen();
 	}
 
-	public void gastGewinnt() {
-		this.gast.gewonnen();
+	public void schuelerGewinnt() {
+		this.schueler.gewonnen();
 	}
 
 }

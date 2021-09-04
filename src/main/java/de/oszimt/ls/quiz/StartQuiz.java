@@ -35,7 +35,8 @@ public class StartQuiz {
 	public static void showException(Exception e, String message) {
 		System.err.println(message);
 		e.printStackTrace();
-		JOptionPane.showMessageDialog(null, message + " in " + e.getStackTrace()[0], e.getClass().getCanonicalName(),
-				JOptionPane.ERROR_MESSAGE);
+		//show an gui exception
+		//JOptionPane.showMessageDialog(null, message + " in " + e.getStackTrace()[0], e.getClass().getCanonicalName(),
+		//		JOptionPane.ERROR_MESSAGE);
 	}
 }
