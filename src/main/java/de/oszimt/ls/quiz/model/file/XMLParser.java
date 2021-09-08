@@ -125,7 +125,7 @@ public class XMLParser {
 			Document doc = docBuilder.newDocument();
 
 			// XML-Dokument mit Daten fuellen
-			Element klasse = doc.createElement(datei.getName());
+			Element klasse = doc.createElement("Klasse.xml");
 			doc.appendChild(klasse);
 
 			// Spielstand speichern
