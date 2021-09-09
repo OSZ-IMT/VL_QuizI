@@ -63,14 +63,13 @@ public class XMLParser {
 			doc.getDocumentElement().normalize();
 
 			// Auslesen
-			// Ebene Klasse.xml
-			NodeList nList = doc.getChildNodes().item(0).getChildNodes();// Spielstand (0), Mitspieler (1)
 
 			//Spielstand laden
 			createSpielstand(doc, model);
 
 			// Ebene Schueler / Mitspieler
-			NodeList schuelerList = doc.getElementsByTagName("Mitspieler").item(0).getChildNodes();
+			Element mitspieler = (Element) doc.getElementsByTagName("Mitspieler").item(0);
+			NodeList schuelerList = mitspieler.getElementsByTagName("Schueler");
 
 			// Schueler auslesen
 			for (int i = 0; i < schuelerList.getLength(); i++) {
@@ -100,12 +99,12 @@ public class XMLParser {
 		Element spielstand = (Element) doc.getElementsByTagName("Spielstand").item(0);
 
 		// Partei Lehrer einlesen
-		Element parteiLehrer = (Element) spielstand.getFirstChild();
+		Element parteiLehrer = (Element) spielstand.getElementsByTagName("Partei").item(0);
 		String lehrerName = parteiLehrer.getAttribute("name");
 		int lehrerPkt = Integer.parseInt(parteiLehrer.getTextContent());
 
 		// Partei Schueler einlesen
-		Element parteiSchueler = (Element) parteiLehrer.getNextSibling();
+		Element parteiSchueler = (Element) spielstand.getElementsByTagName("Partei").item(1);
 		String schuelerName = parteiSchueler.getAttribute("name");
 		int schuelerPkt = Integer.parseInt(parteiSchueler.getTextContent());
 
